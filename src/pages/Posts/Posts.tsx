@@ -48,7 +48,7 @@ export default function Posts({ }: Props) {
     if (error) return <p>Ошибка: {error}</p>;
 
     const handlePageChange = (page: number) => {
-        setTimeout(() => {
+        let timer = setTimeout(() => {
             const scroll = gsap.to(window, {
                 duration: .5,
                 scrollTo: 0,
@@ -57,6 +57,7 @@ export default function Posts({ }: Props) {
                 scroll.pause();
             });
         }, 500)
+        clearTimeout(timer)
         dispatch(setCurrentPage(page));
         setSearchParams({ page: page.toString() });
     };
