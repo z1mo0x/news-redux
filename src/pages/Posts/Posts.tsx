@@ -50,7 +50,8 @@ export default function Posts({ }: Props) {
     const handlePageChange = (page: number) => {
         const scroll = gsap.to(window, {
             duration: .5,
-            scrollTo: 0
+            scrollTo: 0,
+            delay: .5
         })
         window.addEventListener('scroll', () => {
             scroll.pause();
