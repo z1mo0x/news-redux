@@ -15,6 +15,9 @@ type Props = {
 
 gsap.registerPlugin(ScrollToPlugin)
 
+
+
+
 export default function Posts({ }: Props) {
 
     const [searchParams, setSearchParams] = useSearchParams();
@@ -45,10 +48,13 @@ export default function Posts({ }: Props) {
     if (error) return <p>Ошибка: {error}</p>;
 
     const handlePageChange = (page: number) => {
-        gsap.to(window, {
+        const scroll = gsap.to(window, {
             duration: .5,
             scrollTo: 0
         })
+        window.addEventListener('scroll', () => {
+            scroll.pause();
+        });
         dispatch(setCurrentPage(page));
         setSearchParams({ page: page.toString() });
     };
