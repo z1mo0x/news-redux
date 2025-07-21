@@ -48,14 +48,15 @@ export default function Posts({ }: Props) {
     if (error) return <p>Ошибка: {error}</p>;
 
     const handlePageChange = (page: number) => {
-        const scroll = gsap.to(window, {
-            duration: .5,
-            scrollTo: 0,
-            delay: .5
-        })
-        window.addEventListener('scroll', () => {
-            scroll.pause();
-        });
+        setTimeout(() => {
+            const scroll = gsap.to(window, {
+                duration: .5,
+                scrollTo: 0,
+            })
+            window.addEventListener('scroll', () => {
+                scroll.pause();
+            });
+        }, 500)
         dispatch(setCurrentPage(page));
         setSearchParams({ page: page.toString() });
     };
