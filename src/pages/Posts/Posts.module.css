@@ -1,0 +1,26 @@
+.posts__wrapper {
+    display: grid;
+    gap: 25px;
+}
+
+.posts__pagination {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.posts__pagination button {
+    width: 35px;
+    height: 30px;
+    background: none;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.posts__pagination button:disabled {
+    border: 1px solid grey;
+    background: grey;
+    color: white;
+}

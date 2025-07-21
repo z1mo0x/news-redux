@@ -1,0 +1,40 @@
+.post {
+    border: 1px solid grey;
+    padding: 30px 20px 15px 20px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.post__number {
+    position: absolute;
+    height: 25px;
+    width: 35px;
+    text-align: center;
+    border-radius: 5px 0 0 0;
+    top: -1px;
+    left: -1px;
+    background: gray;
+    color: white;
+}
+
+.post__number::before {
+    content: '#';
+    color: lightgray;
+}
+
+.post__title {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.post__title::first-letter {
+    text-transform: capitalize;
+}
+
+.post__text {
+    margin-top: 5px;
+}
+
+.post__text::first-letter {
+    text-transform: capitalize;
+}
