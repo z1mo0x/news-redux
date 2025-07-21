@@ -6,6 +6,7 @@ import { type AppDispatch, type RootState } from '../../store/store';
 import Post from '../../components/Post/Post';
 import Layout from '../../components/Layout/Layout';
 import { useSearchParams } from 'react-router';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import gsap from 'gsap';
 
 type Props = {
@@ -58,7 +59,7 @@ export default function Posts({ }: Props) {
                 {currentPosts.map(el => <Post key={el.id} title={el.title} id={el.id} text={el.body} />)}
             </div>
             <div className={styles.posts__pagination}>
-                {Array.from({ length: totalPages }, (value, index) => index + 1).map(
+                {Array.from({ length: totalPages }, (_, index) => index + 1).map(
                     page =>
                         <button key={page} onClick={() => { handlePageChange(page) }} disabled={page === currentPage}>
                             {page}
