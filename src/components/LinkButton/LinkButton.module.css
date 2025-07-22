@@ -1,0 +1,16 @@
+.button {
+    text-decoration: none;
+    color: black;
+    border: 2px solid #000;
+    padding: 10px 25px;
+    display: block;
+    width: max-content;
+    margin-top: 40px;
+    transition: all .3s;
+}
+
+.button:hover {
+    border-radius: 10px;
+    border: 2px solid gray;
+    color: gray;
+}

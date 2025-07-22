@@ -1,0 +1,31 @@
+.hero__title {
+    font-size: 28px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.post__main {
+    margin-top: 30px;
+    border: 2px solid gray;
+    box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.432);
+}
+
+.hero__block {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.hero__image img {
+    width: 100%;
+}
+
+.hero__info {
+    position: sticky;
+    top: 50px;
+}
+
+.hero__text p {
+    margin-top: 15px;
+}

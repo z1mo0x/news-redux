@@ -1,0 +1,19 @@
+.hero__block {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.hero__image img {
+    width: 100%;
+}
+
+.hero__info {
+    position: sticky;
+    top: 50px;
+}
+
+.hero__text p {
+    margin-top: 15px;
+}
