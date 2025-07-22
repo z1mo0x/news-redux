@@ -3,7 +3,7 @@ import heroImage from "../../assets/hero-image.jpg"
 import LinkButton from "../LinkButton/LinkButton";
 
 type Props = {
-    text: string;
+    text: string[];
 }
 
 function InfoBlock({ text }: Props) {
@@ -14,7 +14,9 @@ function InfoBlock({ text }: Props) {
             </div>
             <div className={styles.hero__info}>
                 <div className={styles.hero__text}>
-                    {text}
+                    {text.map(item => (
+                        <p>{item}</p>
+                    ))}
                 </div>
                 <LinkButton to={'/posts'}>Перейти к новостям</LinkButton>
             </div>
