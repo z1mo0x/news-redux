@@ -14,8 +14,8 @@ function InfoBlock({ text }: Props) {
             </div>
             <div className={styles.hero__info}>
                 <div className={styles.hero__text}>
-                    {text.map(item => (
-                        <p>{item}</p>
+                    {text.map((item, index) => (
+                        <p key={index}>{item}</p>
                     ))}
                 </div>
                 <LinkButton to={'/posts'}>Перейти к новостям</LinkButton>

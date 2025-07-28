@@ -8,11 +8,16 @@ import {
     type PostsAction,
     type Post,
 } from '../types/posts';
-
+import { type RootState } from '../store';
 
 
 export const fetchPosts = () => {
-    return async (dispatch: Dispatch<PostsAction>) => {
+    return async (dispatch: Dispatch<PostsAction>, getState: () => RootState) => {
+        const { posts } = getState().posts;
+        if (posts.length > 0) {
+            return;
+        }
+
         dispatch({ type: FETCH_POSTS_REQUEST });
         try {
             const response = await axios.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
@@ -24,8 +29,9 @@ export const fetchPosts = () => {
             }
             dispatch({ type: FETCH_POSTS_FAILURE, payload: message });
         }
-    };
-};
+    }
+}
+
 
 export const setCurrentPage = (page: number): PostsAction => ({
     type: SET_CURRENT_PAGE,

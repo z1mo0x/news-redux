@@ -8,6 +8,7 @@ import Layout from '../../components/Layout/Layout';
 import { useSearchParams } from 'react-router';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import gsap from 'gsap';
+import { useQuery } from '@tanstack/react-query';
 
 type Props = {
 
@@ -36,6 +37,7 @@ export default function Posts({ }: Props) {
     const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     const totalPages = Math.ceil(posts.length / postsPerPage)
+
 
 
     useEffect(() => {
